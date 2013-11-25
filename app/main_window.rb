@@ -1,10 +1,9 @@
 class MainWindowController < TeacupWindowController
+  stylesheet :main
 
-  layout do |view|
+  layout do
     @messages_controller = MessagesController.new
-    subview @messages_controller.view,
-      frame: [[10, 10], [460, 340]],
-      autoresizingMask: NSViewWidthSizable | NSViewHeightSizable,
+    subview @messages_controller.view
   end
 
 end
