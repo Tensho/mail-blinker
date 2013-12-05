@@ -1,9 +1,11 @@
 class MessageView < WebView
   include MessageViewNotifications
+  include MessageViewWebFrameLoadDelegate
 
   def initWithFrame frame
     super.tap do
       self.mainFrame.loadRequest(NSURLRequest.requestWithURL(NSURL.URLWithString("http://habrahabr.ru")))
+      self.frameLoadDelegate = self
       add_observer
 
       look_webview self
