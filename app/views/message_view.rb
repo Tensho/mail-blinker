@@ -4,7 +4,7 @@ class MessageView < WebView
   def initWithFrame frame
     super.tap do
       self.mainFrame.loadRequest(NSURLRequest.requestWithURL(NSURL.URLWithString("http://habrahabr.ru")))
-      add_observers
+      add_observer
 
       look_webview self
       look_preferences self.preferences
