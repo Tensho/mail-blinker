@@ -6,6 +6,7 @@ class MessageView < WebView
       look_webview self
       look_preferences self.preferences
       look_webframe self.mainFrame
+      look_webdatasource self.mainFrame.dataSource
     end
   end
 
@@ -67,4 +68,24 @@ class MessageView < WebView
     # puts "globalContext: #{webframe.globalContext}"
     puts "windowObject: #{webframe.windowObject}"
   end
+
+  def look_webdatasource webdatasource
+    puts "=" * 80
+    puts "WebDataSource #{webdatasource}"
+    puts "=" * 80
+    puts "data: #{webdatasource.data}"
+    puts "isLoading: #{webdatasource.isLoading}"
+    puts "pageTitle: #{webdatasource.pageTitle}"
+    puts "representation: #{webdatasource.representation}"
+    puts "textEncodingName: #{webdatasource.textEncodingName}"
+    puts "initialRequest: #{webdatasource.initialRequest}"
+    puts "request: #{webdatasource.request}"
+    puts "response: #{webdatasource.response}"
+    puts "webFrame: #{webdatasource.webFrame}"
+    puts "unreachableURL: #{webdatasource.unreachableURL}"
+    puts "webArchive: #{webdatasource.webArchive}"
+    puts "mainResource: #{webdatasource.mainResource}"
+    puts "subresources: #{webdatasource.subresources}"
+  end
+
 end
