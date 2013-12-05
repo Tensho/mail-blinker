@@ -1,7 +1,10 @@
 class MessageView < WebView
+  include MessageViewNotifications
+
   def initWithFrame frame
     super.tap do
       self.mainFrame.loadRequest(NSURLRequest.requestWithURL(NSURL.URLWithString("http://habrahabr.ru")))
+      add_observers
 
       look_webview self
       look_preferences self.preferences
