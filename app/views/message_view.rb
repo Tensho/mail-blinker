@@ -5,6 +5,7 @@ class MessageView < WebView
 
       look_webview self
       look_preferences self.preferences
+      look_webframe self.mainFrame
     end
   end
 
@@ -48,5 +49,22 @@ class MessageView < WebView
     puts "tabsToLinks: #{preferences.tabsToLinks}"
     puts "usesPageCache: #{preferences.usesPageCache}"
     puts "cacheModel: #{preferences.cacheModel}"
+  end
+
+  def look_webframe webframe
+    puts "=" * 80
+    puts "WebFrame #{webframe}"
+    puts "=" * 80
+    puts "dataSource: #{webframe.dataSource}"
+    puts "provisionalDataSource: #{webframe.provisionalDataSource}"
+    puts "parentFrame: #{webframe.parentFrame}"
+    puts "childFrames: #{webframe.childFrames}"
+    puts "frameView: #{webframe.frameView}"
+    puts "webView: #{webframe.webView}"
+    puts "name: #{webframe.name}"
+    puts "DOMDocument: #{webframe.DOMDocument}"
+    puts "frameElement: #{webframe.frameElement}"
+    # puts "globalContext: #{webframe.globalContext}"
+    puts "windowObject: #{webframe.windowObject}"
   end
 end
