@@ -3,6 +3,7 @@ class MessageView < WebView
   include MessageViewWebFrameLoadDelegate
   include MessageViewWebPolicyDelegate
   include MessageViewWebResourceLoadDelegate
+  include MessageViewWebUIDelegate
 
   def initWithFrame frame
     super.tap do
@@ -10,6 +11,7 @@ class MessageView < WebView
       self.frameLoadDelegate = self
       self.policyDelegate = self
       self.resourceLoadDelegate = self
+      self.UIDelegate = self
 
       add_observer
 
