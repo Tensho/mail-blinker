@@ -1,7 +1,27 @@
 class AppDelegate
-  def applicationDidFinishLaunching(notification)
-    buildMenu
-    buildWindow
+
+  def applicationWillFinishLaunching notification
+    puts "applicationWillFinishLaunching".yellow
+  end
+
+  def applicationDidFinishLaunching notification
+    puts "applicationDidFinishLaunching".yellow
+    # buildMenu
+    # buildWindow
+  end
+
+  def applicationWillTerminate notification
+    puts "applicationWillTerminate".yellow
+  end
+
+  def applicationShouldTerminate notification
+    puts "applicationShouldTerminate".yellow
+    NSTerminateNow
+  end
+
+  def applicationShouldTerminateAfterLastWindowClosed sender
+    puts "applicationShouldTerminateAfterLastWindowClosed".yellow
+    true
   end
 
   def buildWindow
