@@ -1,0 +1,55 @@
+<?xml version='1.0'?>
+<signatures version='1.0'>
+<enum name='INT16_MAX' value='32767'/>
+<enum name='INT16_MIN' value='-32768'/>
+<enum name='INT32_MAX' value='2147483647'/>
+<enum name='INT32_MIN' value='-2147483648'/>
+<enum name='INT64_MAX' value='9223372036854775807'/>
+<enum name='INT64_MIN' value='-9223372036854775808'/>
+<enum name='INT8_MAX' value='127'/>
+<enum name='INT8_MIN' value='-128'/>
+<enum name='INTMAX_MAX' value='9223372036854775807'/>
+<enum name='INTMAX_MIN' value='-9223372036854775808'/>
+<enum name='INTPTR_MAX' value='2147483647' value64='9223372036854775807'/>
+<enum name='INTPTR_MIN' value='-2147483648' value64='-9223372036854775808'/>
+<enum name='INT_FAST16_MAX' value='32767'/>
+<enum name='INT_FAST16_MIN' value='-32768'/>
+<enum name='INT_FAST32_MAX' value='2147483647'/>
+<enum name='INT_FAST32_MIN' value='-2147483648'/>
+<enum name='INT_FAST64_MAX' value='9223372036854775807'/>
+<enum name='INT_FAST64_MIN' value='-9223372036854775808'/>
+<enum name='INT_FAST8_MAX' value='127'/>
+<enum name='INT_FAST8_MIN' value='-128'/>
+<enum name='INT_LEAST16_MAX' value='32767'/>
+<enum name='INT_LEAST16_MIN' value='-32768'/>
+<enum name='INT_LEAST32_MAX' value='2147483647'/>
+<enum name='INT_LEAST32_MIN' value='-2147483648'/>
+<enum name='INT_LEAST64_MAX' value='9223372036854775807'/>
+<enum name='INT_LEAST64_MIN' value='-9223372036854775808'/>
+<enum name='INT_LEAST8_MAX' value='127'/>
+<enum name='INT_LEAST8_MIN' value='-128'/>
+<enum name='PTRDIFF_MAX' value='2147483647' value64='9223372036854775807'/>
+<enum name='PTRDIFF_MIN' value='-2147483648' value64='-9223372036854775808'/>
+<enum name='RSIZE_MAX' value='2147483647' value64='9223372036854775807'/>
+<enum name='SIG_ATOMIC_MAX' value='2147483647'/>
+<enum name='SIG_ATOMIC_MIN' value='-2147483648'/>
+<enum name='SIZE_MAX' value='4294967295' value64='18446744073709551615'/>
+<enum name='UINT16_MAX' value='65535'/>
+<enum name='UINT32_MAX' value='4294967295'/>
+<enum name='UINT64_MAX' value='18446744073709551615'/>
+<enum name='UINT8_MAX' value='255'/>
+<enum name='UINTMAX_MAX' value='18446744073709551615'/>
+<enum name='UINTPTR_MAX' value='4294967295' value64='18446744073709551615'/>
+<enum name='UINT_FAST16_MAX' value='65535'/>
+<enum name='UINT_FAST32_MAX' value='4294967295'/>
+<enum name='UINT_FAST64_MAX' value='18446744073709551615'/>
+<enum name='UINT_FAST8_MAX' value='255'/>
+<enum name='UINT_LEAST16_MAX' value='65535'/>
+<enum name='UINT_LEAST32_MAX' value='4294967295'/>
+<enum name='UINT_LEAST64_MAX' value='18446744073709551615'/>
+<enum name='UINT_LEAST8_MAX' value='255'/>
+<enum name='WCHAR_MAX' value='2147483647'/>
+<enum name='WCHAR_MIN' value='-2147483648'/>
+<enum name='WINT_MAX' value='2147483647'/>
+<enum name='WINT_MIN' value='-2147483648'/>
+</signatures>

@@ -1,0 +1,2314 @@
+<?xml version='1.0'?>
+<signatures version='1.0'>
+<struct name='MCORange' type='{_MCORange="location"Q"length"Q}'>
+<field declared_type='uint64_t' name='location' type='Q'/>
+<field declared_type='uint64_t' name='length' type='Q'/>
+</struct>
+<opaque name='mailimap' type='^{mailimap=}'/>
+<opaque name='mailpop3' type='^{mailpop3=}'/>
+<opaque name='mailsmtp' type='^{mailsmtp=}'/>
+<constant declared_type='int' name='MCLogEnabled' type='i'/>
+<constant declared_type='MCORange' name='MCORangeEmpty' type='{_MCORange=QQ}'/>
+<string_constant name='MCOErrorDomain' nsstring='true' value='MCOErrorDomain'/>
+<string_constant name='MCOIMAPNamespaceOther' nsstring='true' value='IMAPNamespaceOther'/>
+<string_constant name='MCOIMAPNamespacePersonal' nsstring='true' value='IMAPNamespacePersonal'/>
+<string_constant name='MCOIMAPNamespaceShared' nsstring='true' value='IMAPNamespaceShared'/>
+<enum name='MCOAuthTypeSASLCRAMMD5' value='1'/>
+<enum name='MCOAuthTypeSASLDIGESTMD5' value='8'/>
+<enum name='MCOAuthTypeSASLGSSAPI' value='4'/>
+<enum name='MCOAuthTypeSASLKerberosV4' value='128'/>
+<enum name='MCOAuthTypeSASLLogin' value='16'/>
+<enum name='MCOAuthTypeSASLNTLM' value='64'/>
+<enum name='MCOAuthTypeSASLNone' value='0'/>
+<enum name='MCOAuthTypeSASLPlain' value='2'/>
+<enum name='MCOAuthTypeSASLSRP' value='32'/>
+<enum name='MCOAuthTypeXOAuth2' value='256'/>
+<enum name='MCOConnectionLogTypeErrorParse' value='3'/>
+<enum name='MCOConnectionLogTypeErrorReceived' value='4'/>
+<enum name='MCOConnectionLogTypeErrorSent' value='5'/>
+<enum name='MCOConnectionLogTypeReceived' value='0'/>
+<enum name='MCOConnectionLogTypeSent' value='1'/>
+<enum name='MCOConnectionLogTypeSentPrivate' value='2'/>
+<enum name='MCOConnectionTypeClear' value='1'/>
+<enum name='MCOConnectionTypeStartTLS' value='2'/>
+<enum name='MCOConnectionTypeTLS' value='4'/>
+<enum name='MCOEncoding7Bit' value='0'/>
+<enum name='MCOEncoding8Bit' value='1'/>
+<enum name='MCOEncodingBase64' value='3'/>
+<enum name='MCOEncodingBinary' value='2'/>
+<enum name='MCOEncodingOther' value='5'/>
+<enum name='MCOEncodingQuotedPrintable' value='4'/>
+<enum name='MCOEncodingUUEncode' value='-1'/>
+<enum name='MCOErrorAppend' value='16'/>
+<enum name='MCOErrorAuthentication' value='5'/>
+<enum name='MCOErrorAuthenticationRequired' value='31'/>
+<enum name='MCOErrorCapability' value='24'/>
+<enum name='MCOErrorCertificate' value='4'/>
+<enum name='MCOErrorCodeCount' value='39'/>
+<enum name='MCOErrorCompression' value='35'/>
+<enum name='MCOErrorConnection' value='1'/>
+<enum name='MCOErrorCopy' value='17'/>
+<enum name='MCOErrorCreate' value='14'/>
+<enum name='MCOErrorDelete' value='13'/>
+<enum name='MCOErrorDeleteMessage' value='33'/>
+<enum name='MCOErrorExpunge' value='18'/>
+<enum name='MCOErrorFetch' value='19'/>
+<enum name='MCOErrorFetchMessageList' value='32'/>
+<enum name='MCOErrorGmailExceededBandwidthLimit' value='7'/>
+<enum name='MCOErrorGmailIMAPNotEnabled' value='6'/>
+<enum name='MCOErrorGmailTooManySimultaneousConnections' value='8'/>
+<enum name='MCOErrorIdentity' value='21'/>
+<enum name='MCOErrorIdle' value='20'/>
+<enum name='MCOErrorInvalidAccount' value='34'/>
+<enum name='MCOErrorMobileMeMoved' value='9'/>
+<enum name='MCOErrorNamespace' value='22'/>
+<enum name='MCOErrorNeedsConnectToWebmail' value='29'/>
+<enum name='MCOErrorNoRecipient' value='37'/>
+<enum name='MCOErrorNoSender' value='36'/>
+<enum name='MCOErrorNonExistantFolder' value='11'/>
+<enum name='MCOErrorNone' value='0'/>
+<enum name='MCOErrorNoop' value='38'/>
+<enum name='MCOErrorParse' value='3'/>
+<enum name='MCOErrorRename' value='12'/>
+<enum name='MCOErrorSendMessage' value='30'/>
+<enum name='MCOErrorSendMessageIllegalAttachment' value='26'/>
+<enum name='MCOErrorSendMessageNotAllowed' value='28'/>
+<enum name='MCOErrorStartTLSNotAvailable' value='25'/>
+<enum name='MCOErrorStorageLimit' value='27'/>
+<enum name='MCOErrorStore' value='23'/>
+<enum name='MCOErrorSubscribe' value='15'/>
+<enum name='MCOErrorTLSNotAvailable' value='2'/>
+<enum name='MCOErrorYahooUnavailable' value='10'/>
+<enum name='MCOIMAPCapabilityACL' value='0'/>
+<enum name='MCOIMAPCapabilityAuthAnonymous' value='21'/>
+<enum name='MCOIMAPCapabilityAuthCRAMMD5' value='22'/>
+<enum name='MCOIMAPCapabilityAuthDigestMD5' value='23'/>
+<enum name='MCOIMAPCapabilityAuthExternal' value='24'/>
+<enum name='MCOIMAPCapabilityAuthGSSAPI' value='25'/>
+<enum name='MCOIMAPCapabilityAuthKerberosV4' value='26'/>
+<enum name='MCOIMAPCapabilityAuthLogin' value='27'/>
+<enum name='MCOIMAPCapabilityAuthNTLM' value='28'/>
+<enum name='MCOIMAPCapabilityAuthOTP' value='29'/>
+<enum name='MCOIMAPCapabilityAuthPlain' value='30'/>
+<enum name='MCOIMAPCapabilityAuthSKey' value='31'/>
+<enum name='MCOIMAPCapabilityAuthSRP' value='32'/>
+<enum name='MCOIMAPCapabilityBinary' value='1'/>
+<enum name='MCOIMAPCapabilityCatenate' value='2'/>
+<enum name='MCOIMAPCapabilityChildren' value='3'/>
+<enum name='MCOIMAPCapabilityCompressDeflate' value='4'/>
+<enum name='MCOIMAPCapabilityCondstore' value='5'/>
+<enum name='MCOIMAPCapabilityEnable' value='6'/>
+<enum name='MCOIMAPCapabilityGmail' value='34'/>
+<enum name='MCOIMAPCapabilityId' value='8'/>
+<enum name='MCOIMAPCapabilityIdle' value='7'/>
+<enum name='MCOIMAPCapabilityLiteralPlus' value='9'/>
+<enum name='MCOIMAPCapabilityMultiAppend' value='10'/>
+<enum name='MCOIMAPCapabilityNamespace' value='11'/>
+<enum name='MCOIMAPCapabilityQResync' value='12'/>
+<enum name='MCOIMAPCapabilityQuota' value='13'/>
+<enum name='MCOIMAPCapabilitySort' value='14'/>
+<enum name='MCOIMAPCapabilityStartTLS' value='15'/>
+<enum name='MCOIMAPCapabilityThreadOrderedSubject' value='16'/>
+<enum name='MCOIMAPCapabilityThreadReferences' value='17'/>
+<enum name='MCOIMAPCapabilityUIDPlus' value='18'/>
+<enum name='MCOIMAPCapabilityUnselect' value='19'/>
+<enum name='MCOIMAPCapabilityXList' value='20'/>
+<enum name='MCOIMAPCapabilityXOAuth2' value='33'/>
+<enum name='MCOIMAPFolderFlagAll' value='128'/>
+<enum name='MCOIMAPFolderFlagAllMail' value='128'/>
+<enum name='MCOIMAPFolderFlagArchive' value='4096'/>
+<enum name='MCOIMAPFolderFlagDrafts' value='512'/>
+<enum name='MCOIMAPFolderFlagFlagged' value='64'/>
+<enum name='MCOIMAPFolderFlagImportant' value='2048'/>
+<enum name='MCOIMAPFolderFlagInbox' value='16'/>
+<enum name='MCOIMAPFolderFlagJunk' value='1024'/>
+<enum name='MCOIMAPFolderFlagMarked' value='1'/>
+<enum name='MCOIMAPFolderFlagNoInferiors' value='8'/>
+<enum name='MCOIMAPFolderFlagNoSelect' value='4'/>
+<enum name='MCOIMAPFolderFlagNone' value='0'/>
+<enum name='MCOIMAPFolderFlagSentMail' value='32'/>
+<enum name='MCOIMAPFolderFlagSpam' value='1024'/>
+<enum name='MCOIMAPFolderFlagStarred' value='64'/>
+<enum name='MCOIMAPFolderFlagTrash' value='256'/>
+<enum name='MCOIMAPFolderFlagUnmarked' value='2'/>
+<enum name='MCOIMAPMessagesRequestKindExtraHeaders' value='512'/>
+<enum name='MCOIMAPMessagesRequestKindFlags' value='1'/>
+<enum name='MCOIMAPMessagesRequestKindFullHeaders' value='16'/>
+<enum name='MCOIMAPMessagesRequestKindGmailLabels' value='64'/>
+<enum name='MCOIMAPMessagesRequestKindGmailMessageID' value='128'/>
+<enum name='MCOIMAPMessagesRequestKindGmailThreadID' value='256'/>
+<enum name='MCOIMAPMessagesRequestKindHeaderSubject' value='32'/>
+<enum name='MCOIMAPMessagesRequestKindHeaders' value='2'/>
+<enum name='MCOIMAPMessagesRequestKindInternalDate' value='8'/>
+<enum name='MCOIMAPMessagesRequestKindStructure' value='4'/>
+<enum name='MCOIMAPMessagesRequestKindUid' value='0'/>
+<enum name='MCOIMAPSearchGmailThreadID' value='7'/>
+<enum name='MCOIMAPSearchKindAll' value='0'/>
+<enum name='MCOIMAPSearchKindAnd' value='9'/>
+<enum name='MCOIMAPSearchKindContent' value='5'/>
+<enum name='MCOIMAPSearchKindFrom' value='2'/>
+<enum name='MCOIMAPSearchKindHeader' value='6'/>
+<enum name='MCOIMAPSearchKindNone' value='1'/>
+<enum name='MCOIMAPSearchKindOr' value='8'/>
+<enum name='MCOIMAPSearchKindRecipient' value='3'/>
+<enum name='MCOIMAPSearchKindSubject' value='4'/>
+<enum name='MCOIMAPStoreFlagsRequestKindAdd' value='0'/>
+<enum name='MCOIMAPStoreFlagsRequestKindRemove' value='1'/>
+<enum name='MCOIMAPStoreFlagsRequestKindSet' value='2'/>
+<enum name='MCOMessageFlagAnswered' value='2'/>
+<enum name='MCOMessageFlagDeleted' value='8'/>
+<enum name='MCOMessageFlagDraft' value='16'/>
+<enum name='MCOMessageFlagFlagged' value='4'/>
+<enum name='MCOMessageFlagForwarded' value='64'/>
+<enum name='MCOMessageFlagMDNSent' value='32'/>
+<enum name='MCOMessageFlagNone' value='0'/>
+<enum name='MCOMessageFlagSeen' value='1'/>
+<enum name='MCOMessageFlagSubmitPending' value='128'/>
+<enum name='MCOMessageFlagSubmitted' value='256'/>
+<enum name='MCOPartTypeMessage' value='1'/>
+<enum name='MCOPartTypeMultipartAlternative' value='4'/>
+<enum name='MCOPartTypeMultipartMixed' value='2'/>
+<enum name='MCOPartTypeMultipartRelated' value='3'/>
+<enum name='MCOPartTypeSingle' value='0'/>
+<function name='MCAssertInternal'>
+<arg const='true' declared_type='char*' name='filename' type='*'/>
+<arg declared_type='unsigned int' name='line' type='I'/>
+<arg declared_type='int' name='cond' type='i'/>
+<arg const='true' declared_type='char*' name='condString' type='*'/>
+<retval declared_type='void' type='v'/>
+</function>
+<function name='MCLogInternal' variadic='true'>
+<arg const='true' declared_type='char*' name='user' type='*'/>
+<arg const='true' declared_type='char*' name='filename' type='*'/>
+<arg declared_type='unsigned int' name='line' type='I'/>
+<arg declared_type='int' name='dumpStack' type='i'/>
+<arg const='true' declared_type='char*' name='format' printf_format='true' type='*'/>
+<retval declared_type='void' type='v'/>
+</function>
+<function name='MCORangeFromString'>
+<arg declared_type='NSString*' name='rangeString' type='@'/>
+<retval declared_type='MCORange' type='{_MCORange=QQ}'/>
+</function>
+<function name='MCORangeHasIntersection'>
+<arg declared_type='MCORange' name='range1' type='{_MCORange=QQ}'/>
+<arg declared_type='MCORange' name='range2' type='{_MCORange=QQ}'/>
+<retval declared_type='BOOL' type='B'/>
+</function>
+<function name='MCORangeIntersection'>
+<arg declared_type='MCORange' name='range1' type='{_MCORange=QQ}'/>
+<arg declared_type='MCORange' name='range2' type='{_MCORange=QQ}'/>
+<retval declared_type='MCORange' type='{_MCORange=QQ}'/>
+</function>
+<function name='MCORangeLeftBound'>
+<arg declared_type='MCORange' name='range' type='{_MCORange=QQ}'/>
+<retval declared_type='uint64_t' type='Q'/>
+</function>
+<function name='MCORangeMake'>
+<arg declared_type='uint64_t' name='location' type='Q'/>
+<arg declared_type='uint64_t' name='length' type='Q'/>
+<retval declared_type='MCORange' type='{_MCORange=QQ}'/>
+</function>
+<function name='MCORangeRemoveRange'>
+<arg declared_type='MCORange' name='range1' type='{_MCORange=QQ}'/>
+<arg declared_type='MCORange' name='range2' type='{_MCORange=QQ}'/>
+<retval declared_type='MCOIndexSet*' type='@'/>
+</function>
+<function name='MCORangeRightBound'>
+<arg declared_type='MCORange' name='range' type='{_MCORange=QQ}'/>
+<retval declared_type='uint64_t' type='Q'/>
+</function>
+<function name='MCORangeToString'>
+<arg declared_type='MCORange' name='range' type='{_MCORange=QQ}'/>
+<retval declared_type='NSString*' type='@'/>
+</function>
+<function name='MCORangeUnion'>
+<arg declared_type='MCORange' name='range1' type='{_MCORange=QQ}'/>
+<arg declared_type='MCORange' name='range2' type='{_MCORange=QQ}'/>
+<retval declared_type='MCOIndexSet*' type='@'/>
+</function>
+<class name='MCOAbstractMessage'>
+<method selector='attachments'>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method selector='header'>
+<retval declared_type='MCOMessageHeader*' type='@'/>
+</method>
+<method selector='htmlInlineAttachments'>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method selector='partForContentID:'>
+<arg declared_type='NSString*' index='0' name='contentID' type='@'/>
+<retval declared_type='MCOAbstractPart*' type='@'/>
+</method>
+<method selector='partForUniqueID:'>
+<arg declared_type='NSString*' index='0' name='uniqueID' type='@'/>
+<retval declared_type='MCOAbstractPart*' type='@'/>
+</method>
+<method selector='setHeader:'>
+<arg declared_type='MCOMessageHeader*' index='0' name='header' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='MCOAbstractMessagePart'>
+<method selector='header'>
+<retval declared_type='MCOMessageHeader*' type='@'/>
+</method>
+<method selector='mainPart'>
+<retval declared_type='MCOAbstractPart*' type='@'/>
+</method>
+<method selector='setHeader:'>
+<arg declared_type='MCOMessageHeader*' index='0' name='header' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setMainPart:'>
+<arg declared_type='MCOAbstractPart*' index='0' name='mainPart' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='MCOAbstractMultipart'>
+<method selector='parts'>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method selector='setParts:'>
+<arg declared_type='NSArray*' index='0' name='parts' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='MCOAbstractPart'>
+<method selector='charset'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='contentDescription'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='contentID'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='contentLocation'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='decodedStringForData:'>
+<arg declared_type='NSData*' index='0' name='data' type='@'/>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='filename'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='isInlineAttachment'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='mimeType'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='partForContentID:'>
+<arg declared_type='NSString*' index='0' name='contentID' type='@'/>
+<retval declared_type='MCOAbstractPart*' type='@'/>
+</method>
+<method selector='partForUniqueID:'>
+<arg declared_type='NSString*' index='0' name='uniqueID' type='@'/>
+<retval declared_type='MCOAbstractPart*' type='@'/>
+</method>
+<method selector='partType'>
+<retval declared_type='MCOPartType' type='i'/>
+</method>
+<method selector='setCharset:'>
+<arg declared_type='NSString*' index='0' name='charset' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setContentDescription:'>
+<arg declared_type='NSString*' index='0' name='contentDescription' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setContentID:'>
+<arg declared_type='NSString*' index='0' name='contentID' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setContentLocation:'>
+<arg declared_type='NSString*' index='0' name='contentLocation' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setFilename:'>
+<arg declared_type='NSString*' index='0' name='filename' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setInlineAttachment:'>
+<arg declared_type='BOOL' index='0' name='inlineAttachment' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setMimeType:'>
+<arg declared_type='NSString*' index='0' name='mimeType' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setPartType:'>
+<arg declared_type='MCOPartType' index='0' name='partType' type='i'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setUniqueID:'>
+<arg declared_type='NSString*' index='0' name='uniqueID' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='uniqueID'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+</class>
+<class name='MCOAddress'>
+<method selector='RFC822String'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method class_method='true' selector='addressWithDisplayName:mailbox:'>
+<arg declared_type='NSString*' index='0' name='displayName' type='@'/>
+<arg declared_type='NSString*' index='1' name='mailbox' type='@'/>
+<retval declared_type='MCOAddress*' type='@'/>
+</method>
+<method class_method='true' selector='addressWithMailbox:'>
+<arg declared_type='NSString*' index='0' name='mailbox' type='@'/>
+<retval declared_type='MCOAddress*' type='@'/>
+</method>
+<method class_method='true' selector='addressWithNonEncodedRFC822String:'>
+<arg declared_type='NSString*' index='0' name='nonEncodedRFC822String' type='@'/>
+<retval declared_type='MCOAddress*' type='@'/>
+</method>
+<method class_method='true' selector='addressWithRFC822String:'>
+<arg declared_type='NSString*' index='0' name='RFC822String' type='@'/>
+<retval declared_type='MCOAddress*' type='@'/>
+</method>
+<method class_method='true' selector='addressesWithNonEncodedRFC822String:'>
+<arg declared_type='NSString*' index='0' name='string' type='@'/>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method class_method='true' selector='addressesWithRFC822String:'>
+<arg declared_type='NSString*' index='0' name='string' type='@'/>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method selector='displayName'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='mailbox'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='nonEncodedRFC822String'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='setDisplayName:'>
+<arg declared_type='NSString*' index='0' name='displayName' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setMailbox:'>
+<arg declared_type='NSString*' index='0' name='mailbox' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='MCOAttachment'>
+<method class_method='true' selector='attachmentWithContentsOfFile:'>
+<arg declared_type='NSString*' index='0' name='filename' type='@'/>
+<retval declared_type='MCOAttachment*' type='@'/>
+</method>
+<method class_method='true' selector='attachmentWithData:filename:'>
+<arg declared_type='NSData*' index='0' name='data' type='@'/>
+<arg declared_type='NSString*' index='1' name='filename' type='@'/>
+<retval declared_type='MCOAttachment*' type='@'/>
+</method>
+<method class_method='true' selector='attachmentWithHTMLString:'>
+<arg declared_type='NSString*' index='0' name='htmlString' type='@'/>
+<retval declared_type='MCOAttachment*' type='@'/>
+</method>
+<method class_method='true' selector='attachmentWithRFC822Message:'>
+<arg declared_type='NSData*' index='0' name='messageData' type='@'/>
+<retval declared_type='MCOAttachment*' type='@'/>
+</method>
+<method class_method='true' selector='attachmentWithText:'>
+<arg declared_type='NSString*' index='0' name='text' type='@'/>
+<retval declared_type='MCOAttachment*' type='@'/>
+</method>
+<method selector='data'>
+<retval declared_type='NSData*' type='@'/>
+</method>
+<method selector='decodedString'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method class_method='true' selector='mimeTypeForFilename:'>
+<arg declared_type='NSString*' index='0' name='filename' type='@'/>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='setData:'>
+<arg declared_type='NSData*' index='0' name='data' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='MCOIMAPAppendMessageOperation'>
+<method selector='progress'>
+<retval declared_type='int' type='i'/>
+</method>
+<method selector='setProgress:'>
+<arg declared_type='int' index='0' name='progress' type='i'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='start:'>
+<arg declared_type='void (^)(NSError *, uint32_t)' function_pointer='true' index='0' name='completionBlock' type='@?'>
+<arg declared_type='NSError*' type='@'/>
+<arg declared_type='uint32_t' type='I'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='MCOIMAPBaseOperation'>
+<method selector='bodyProgress:maximum:'>
+<arg declared_type='unsigned int' index='0' name='current' type='I'/>
+<arg declared_type='unsigned int' index='1' name='maximum' type='I'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='itemProgress:maximum:'>
+<arg declared_type='unsigned int' index='0' name='current' type='I'/>
+<arg declared_type='unsigned int' index='1' name='maximum' type='I'/>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='MCOIMAPCapabilityOperation'>
+<method selector='start:'>
+<arg declared_type='void (^)(NSError *, MCOIndexSet *)' function_pointer='true' index='0' name='completionBlock' type='@?'>
+<arg declared_type='NSError*' type='@'/>
+<arg declared_type='MCOIndexSet*' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='MCOIMAPCopyMessagesOperation'>
+<method selector='start:'>
+<arg declared_type='void (^)(NSError *, MCOIndexSet *)' function_pointer='true' index='0' name='completionBlock' type='@?'>
+<arg declared_type='NSError*' type='@'/>
+<arg declared_type='MCOIndexSet*' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='MCOIMAPFetchContentOperation'>
+<method selector='progress'>
+<retval declared_type='MCOIMAPBaseOperationProgressBlock' function_pointer='true' type='@?'>
+<arg declared_type='unsigned int' type='I'/>
+<arg declared_type='unsigned int' type='I'/>
+<retval declared_type='void' type='v'/>
+</retval>
+</method>
+<method selector='setProgress:'>
+<arg declared_type='MCOIMAPBaseOperationProgressBlock' function_pointer='true' index='0' name='progress' type='@?'>
+<arg declared_type='unsigned int' type='I'/>
+<arg declared_type='unsigned int' type='I'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='start:'>
+<arg declared_type='void (^)(NSError *, NSData *)' function_pointer='true' index='0' name='completionBlock' type='@?'>
+<arg declared_type='NSError*' type='@'/>
+<arg declared_type='NSData*' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='MCOIMAPFetchFoldersOperation'>
+<method selector='start:'>
+<arg declared_type='void (^)(NSError *, NSArray *)' function_pointer='true' index='0' name='completionBlock' type='@?'>
+<arg declared_type='NSError*' type='@'/>
+<arg declared_type='NSArray*' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='MCOIMAPFetchMessagesOperation'>
+<method selector='extraHeaders'>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method selector='progress'>
+<retval declared_type='MCOIMAPBaseOperationItemProgressBlock' function_pointer='true' type='@?'>
+<arg declared_type='unsigned int' type='I'/>
+<retval declared_type='void' type='v'/>
+</retval>
+</method>
+<method selector='setExtraHeaders:'>
+<arg declared_type='NSArray*' index='0' name='extraHeaders' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setProgress:'>
+<arg declared_type='MCOIMAPBaseOperationItemProgressBlock' function_pointer='true' index='0' name='progress' type='@?'>
+<arg declared_type='unsigned int' type='I'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='start:'>
+<arg declared_type='void (^)(NSError *, NSArray *, MCOIndexSet *)' function_pointer='true' index='0' name='completionBlock' type='@?'>
+<arg declared_type='NSError*' type='@'/>
+<arg declared_type='NSArray*' type='@'/>
+<arg declared_type='MCOIndexSet*' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='MCOIMAPFetchNamespaceOperation'>
+<method selector='start:'>
+<arg declared_type='void (^)(NSError *, NSDictionary *)' function_pointer='true' index='0' name='completionBlock' type='@?'>
+<arg declared_type='NSError*' type='@'/>
+<arg declared_type='NSDictionary*' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='MCOIMAPFolder'>
+<method selector='delimiter'>
+<retval declared_type='char' type='c'/>
+</method>
+<method selector='flags'>
+<retval declared_type='MCOIMAPFolderFlag' type='i'/>
+</method>
+<method selector='path'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='setDelimiter:'>
+<arg declared_type='char' index='0' name='delimiter' type='c'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setFlags:'>
+<arg declared_type='MCOIMAPFolderFlag' index='0' name='flags' type='i'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setPath:'>
+<arg declared_type='NSString*' index='0' name='path' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='MCOIMAPFolderInfo'>
+<method selector='firstUnseenUid'>
+<retval declared_type='uint32_t' type='I'/>
+</method>
+<method class_method='true' selector='info'>
+<retval declared_type='MCOIMAPFolderInfo*' type='@'/>
+</method>
+<method selector='messageCount'>
+<retval declared_type='int' type='i'/>
+</method>
+<method selector='modSequenceValue'>
+<retval declared_type='uint64_t' type='Q'/>
+</method>
+<method selector='setFirstUnseenUid:'>
+<arg declared_type='uint32_t' index='0' name='firstUnseenUid' type='I'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setMessageCount:'>
+<arg declared_type='int' index='0' name='messageCount' type='i'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setModSequenceValue:'>
+<arg declared_type='uint64_t' index='0' name='modSequenceValue' type='Q'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setUidNext:'>
+<arg declared_type='uint32_t' index='0' name='uidNext' type='I'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setUidValidity:'>
+<arg declared_type='uint32_t' index='0' name='uidValidity' type='I'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='uidNext'>
+<retval declared_type='uint32_t' type='I'/>
+</method>
+<method selector='uidValidity'>
+<retval declared_type='uint32_t' type='I'/>
+</method>
+</class>
+<class name='MCOIMAPFolderInfoOperation'>
+<method selector='start:'>
+<arg declared_type='void (^)(NSError *, MCOIMAPFolderInfo *)' function_pointer='true' index='0' name='completionBlock' type='@?'>
+<arg declared_type='NSError*' type='@'/>
+<arg declared_type='MCOIMAPFolderInfo*' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='MCOIMAPFolderStatus'>
+<method selector='messageCount'>
+<retval declared_type='uint32_t' type='I'/>
+</method>
+<method selector='recentCount'>
+<retval declared_type='uint32_t' type='I'/>
+</method>
+<method selector='setHighestModSeqValue'>
+<retval declared_type='uint64_t' type='Q'/>
+</method>
+<method selector='setMessageCount:'>
+<arg declared_type='uint32_t' index='0' name='messageCount' type='I'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setRecentCount:'>
+<arg declared_type='uint32_t' index='0' name='recentCount' type='I'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setSetHighestModSeqValue:'>
+<arg declared_type='uint64_t' index='0' name='setHighestModSeqValue' type='Q'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setUidNext:'>
+<arg declared_type='uint32_t' index='0' name='uidNext' type='I'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setUidValidity:'>
+<arg declared_type='uint32_t' index='0' name='uidValidity' type='I'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setUnseenCount:'>
+<arg declared_type='uint32_t' index='0' name='unseenCount' type='I'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='uidNext'>
+<retval declared_type='uint32_t' type='I'/>
+</method>
+<method selector='uidValidity'>
+<retval declared_type='uint32_t' type='I'/>
+</method>
+<method selector='unseenCount'>
+<retval declared_type='uint32_t' type='I'/>
+</method>
+</class>
+<class name='MCOIMAPFolderStatusOperation'>
+<method selector='start:'>
+<arg declared_type='void (^)(NSError *, MCOIMAPFolderStatus *)' function_pointer='true' index='0' name='completionBlock' type='@?'>
+<arg declared_type='NSError*' type='@'/>
+<arg declared_type='MCOIMAPFolderStatus*' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='MCOIMAPIdentity'>
+<method selector='allInfoKeys'>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method class_method='true' selector='identityWithVendor:name:version:'>
+<arg declared_type='NSString*' index='0' name='vendor' type='@'/>
+<arg declared_type='NSString*' index='1' name='name' type='@'/>
+<arg declared_type='NSString*' index='2' name='version' type='@'/>
+<retval declared_type='MCOIMAPIdentity*' type='@'/>
+</method>
+<method selector='infoForKey:'>
+<arg declared_type='NSString*' index='0' name='key' type='@'/>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='name'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='setInfo:forKey:'>
+<arg declared_type='NSString*' index='0' name='value' type='@'/>
+<arg declared_type='NSString*' index='1' name='key' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setName:'>
+<arg declared_type='NSString*' index='0' name='name' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setVendor:'>
+<arg declared_type='NSString*' index='0' name='vendor' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setVersion:'>
+<arg declared_type='NSString*' index='0' name='version' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='vendor'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='version'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+</class>
+<class name='MCOIMAPIdentityOperation'>
+<method selector='start:'>
+<arg declared_type='void (^)(NSError *, NSDictionary *)' function_pointer='true' index='0' name='completionBlock' type='@?'>
+<arg declared_type='NSError*' type='@'/>
+<arg declared_type='NSDictionary*' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='MCOIMAPIdleOperation'>
+<method selector='interruptIdle'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='start:'>
+<arg declared_type='void (^)(NSError *)' function_pointer='true' index='0' name='completionBlock' type='@?'>
+<arg declared_type='NSError*' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='MCOIMAPMessage'>
+<method selector='flags'>
+<retval declared_type='MCOMessageFlag' type='i'/>
+</method>
+<method selector='gmailLabels'>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method selector='gmailMessageID'>
+<retval declared_type='uint64_t' type='Q'/>
+</method>
+<method selector='gmailThreadID'>
+<retval declared_type='uint64_t' type='Q'/>
+</method>
+<method selector='htmlRenderingWithFolder:delegate:'>
+<arg declared_type='NSString*' index='0' name='folder' type='@'/>
+<arg declared_type='id' index='1' name='delegate' type='@'/>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='mainPart'>
+<retval declared_type='MCOAbstractPart*' type='@'/>
+</method>
+<method selector='modSeqValue'>
+<retval declared_type='uint64_t' type='Q'/>
+</method>
+<method selector='originalFlags'>
+<retval declared_type='MCOMessageFlag' type='i'/>
+</method>
+<method selector='partForPartID:'>
+<arg declared_type='NSString*' index='0' name='partID' type='@'/>
+<retval declared_type='MCOAbstractPart*' type='@'/>
+</method>
+<method selector='setFlags:'>
+<arg declared_type='MCOMessageFlag' index='0' name='flags' type='i'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setGmailLabels:'>
+<arg declared_type='NSArray*' index='0' name='gmailLabels' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setGmailMessageID:'>
+<arg declared_type='uint64_t' index='0' name='gmailMessageID' type='Q'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setGmailThreadID:'>
+<arg declared_type='uint64_t' index='0' name='gmailThreadID' type='Q'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setMainPart:'>
+<arg declared_type='MCOAbstractPart*' index='0' name='mainPart' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setModSeqValue:'>
+<arg declared_type='uint64_t' index='0' name='modSeqValue' type='Q'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setOriginalFlags:'>
+<arg declared_type='MCOMessageFlag' index='0' name='originalFlags' type='i'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setUid:'>
+<arg declared_type='uint32_t' index='0' name='uid' type='I'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='uid'>
+<retval declared_type='uint32_t' type='I'/>
+</method>
+</class>
+<class name='MCOIMAPMessagePart'>
+<method selector='partID'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='setPartID:'>
+<arg declared_type='NSString*' index='0' name='partID' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='MCOIMAPMessageRenderingOperation'>
+<method selector='start:'>
+<arg declared_type='void (^)(NSString *, NSError *)' function_pointer='true' index='0' name='completionBlock' type='@?'>
+<arg declared_type='NSString*' type='@'/>
+<arg declared_type='NSError*' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='MCOIMAPMultipart'>
+<method selector='partID'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='setPartID:'>
+<arg declared_type='NSString*' index='0' name='partID' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='MCOIMAPNamespace'>
+<method selector='componentsFromPath:'>
+<arg declared_type='NSString*' index='0' name='path' type='@'/>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method selector='containsFolderPath:'>
+<arg declared_type='NSString*' index='0' name='path' type='@'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='mainDelimiter'>
+<retval declared_type='char' type='c'/>
+</method>
+<method selector='mainPrefix'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method class_method='true' selector='namespaceWithPrefix:delimiter:'>
+<arg declared_type='NSString*' index='0' name='prefix' type='@'/>
+<arg declared_type='char' index='1' name='delimiter' type='c'/>
+<retval declared_type='MCOIMAPNamespace*' type='@'/>
+</method>
+<method selector='pathForComponents:'>
+<arg declared_type='NSArray*' index='0' name='components' type='@'/>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='pathForComponents:prefix:'>
+<arg declared_type='NSArray*' index='0' name='components' type='@'/>
+<arg declared_type='NSString*' index='1' name='prefix' type='@'/>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='prefixes'>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+</class>
+<class name='MCOIMAPNamespaceItem'>
+<method selector='componentsForPath:'>
+<arg declared_type='NSString*' index='0' name='path' type='@'/>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method selector='containsFolder:'>
+<arg declared_type='NSString*' index='0' name='folder' type='@'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='delimiter'>
+<retval declared_type='char' type='c'/>
+</method>
+<method selector='pathForComponents:'>
+<arg declared_type='NSArray*' index='0' name='components' type='@'/>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='prefix'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='setDelimiter:'>
+<arg declared_type='char' index='0' name='delimiter' type='c'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setPrefix:'>
+<arg declared_type='NSString*' index='0' name='prefix' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='MCOIMAPOperation'>
+<method selector='start:'>
+<arg declared_type='void (^)(NSError *)' function_pointer='true' index='0' name='completionBlock' type='@?'>
+<arg declared_type='NSError*' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='MCOIMAPPart'>
+<method selector='decodedSize'>
+<retval declared_type='unsigned int' type='I'/>
+</method>
+<method selector='encoding'>
+<retval declared_type='MCOEncoding' type='i'/>
+</method>
+<method selector='partID'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='setEncoding:'>
+<arg declared_type='MCOEncoding' index='0' name='encoding' type='i'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setPartID:'>
+<arg declared_type='NSString*' index='0' name='partID' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setSize:'>
+<arg declared_type='unsigned int' index='0' name='size' type='I'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='size'>
+<retval declared_type='unsigned int' type='I'/>
+</method>
+</class>
+<class name='MCOIMAPQuotaOperation'>
+<method selector='start:'>
+<arg declared_type='void (^)(NSError *, NSUInteger, NSUInteger)' function_pointer='true' index='0' name='completionBlock' type='@?'>
+<arg declared_type='NSError*' type='@'/>
+<arg declared_type='NSUInteger' type='I' type64='Q'/>
+<arg declared_type='NSUInteger' type='I' type64='Q'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='MCOIMAPSearchExpression'>
+<method class_method='true' selector='searchAll'>
+<retval declared_type='MCOIMAPSearchExpression*' type='@'/>
+</method>
+<method class_method='true' selector='searchAnd:other:'>
+<arg declared_type='MCOIMAPSearchExpression*' index='0' name='expression' type='@'/>
+<arg declared_type='MCOIMAPSearchExpression*' index='1' name='other' type='@'/>
+<retval declared_type='MCOIMAPSearchExpression*' type='@'/>
+</method>
+<method class_method='true' selector='searchAnswered'>
+<retval declared_type='MCOIMAPSearchExpression*' type='@'/>
+</method>
+<method class_method='true' selector='searchBeforeDate:'>
+<arg declared_type='NSDate*' index='0' name='date' type='@'/>
+<retval declared_type='MCOIMAPSearchExpression*' type='@'/>
+</method>
+<method class_method='true' selector='searchBeforeReceivedDate:'>
+<arg declared_type='NSDate*' index='0' name='date' type='@'/>
+<retval declared_type='MCOIMAPSearchExpression*' type='@'/>
+</method>
+<method class_method='true' selector='searchContent:'>
+<arg declared_type='NSString*' index='0' name='value' type='@'/>
+<retval declared_type='MCOIMAPSearchExpression*' type='@'/>
+</method>
+<method class_method='true' selector='searchDeleted'>
+<retval declared_type='MCOIMAPSearchExpression*' type='@'/>
+</method>
+<method class_method='true' selector='searchDraft'>
+<retval declared_type='MCOIMAPSearchExpression*' type='@'/>
+</method>
+<method class_method='true' selector='searchFlagged'>
+<retval declared_type='MCOIMAPSearchExpression*' type='@'/>
+</method>
+<method class_method='true' selector='searchFrom:'>
+<arg declared_type='NSString*' index='0' name='value' type='@'/>
+<retval declared_type='MCOIMAPSearchExpression*' type='@'/>
+</method>
+<method class_method='true' selector='searchGmailThreadID:'>
+<arg declared_type='uint64_t' index='0' name='number' type='Q'/>
+<retval declared_type='MCOIMAPSearchExpression*' type='@'/>
+</method>
+<method class_method='true' selector='searchHeader:value:'>
+<arg declared_type='NSString*' index='0' name='header' type='@'/>
+<arg declared_type='NSString*' index='1' name='value' type='@'/>
+<retval declared_type='MCOIMAPSearchExpression*' type='@'/>
+</method>
+<method class_method='true' selector='searchOnDate:'>
+<arg declared_type='NSDate*' index='0' name='date' type='@'/>
+<retval declared_type='MCOIMAPSearchExpression*' type='@'/>
+</method>
+<method class_method='true' selector='searchOnReceivedDate:'>
+<arg declared_type='NSDate*' index='0' name='date' type='@'/>
+<retval declared_type='MCOIMAPSearchExpression*' type='@'/>
+</method>
+<method class_method='true' selector='searchOr:other:'>
+<arg declared_type='MCOIMAPSearchExpression*' index='0' name='expression' type='@'/>
+<arg declared_type='MCOIMAPSearchExpression*' index='1' name='other' type='@'/>
+<retval declared_type='MCOIMAPSearchExpression*' type='@'/>
+</method>
+<method class_method='true' selector='searchRead'>
+<retval declared_type='MCOIMAPSearchExpression*' type='@'/>
+</method>
+<method class_method='true' selector='searchRecipient:'>
+<arg declared_type='NSString*' index='0' name='value' type='@'/>
+<retval declared_type='MCOIMAPSearchExpression*' type='@'/>
+</method>
+<method class_method='true' selector='searchSinceDate:'>
+<arg declared_type='NSDate*' index='0' name='date' type='@'/>
+<retval declared_type='MCOIMAPSearchExpression*' type='@'/>
+</method>
+<method class_method='true' selector='searchSinceReceivedDate:'>
+<arg declared_type='NSDate*' index='0' name='date' type='@'/>
+<retval declared_type='MCOIMAPSearchExpression*' type='@'/>
+</method>
+<method class_method='true' selector='searchSpam'>
+<retval declared_type='MCOIMAPSearchExpression*' type='@'/>
+</method>
+<method class_method='true' selector='searchSubject:'>
+<arg declared_type='NSString*' index='0' name='value' type='@'/>
+<retval declared_type='MCOIMAPSearchExpression*' type='@'/>
+</method>
+<method class_method='true' selector='searchUnanswered'>
+<retval declared_type='MCOIMAPSearchExpression*' type='@'/>
+</method>
+<method class_method='true' selector='searchUndraft'>
+<retval declared_type='MCOIMAPSearchExpression*' type='@'/>
+</method>
+<method class_method='true' selector='searchUnflagged'>
+<retval declared_type='MCOIMAPSearchExpression*' type='@'/>
+</method>
+<method class_method='true' selector='searchUnread'>
+<retval declared_type='MCOIMAPSearchExpression*' type='@'/>
+</method>
+</class>
+<class name='MCOIMAPSearchOperation'>
+<method selector='start:'>
+<arg declared_type='void (^)(NSError *, MCOIndexSet *)' function_pointer='true' index='0' name='completionBlock' type='@?'>
+<arg declared_type='NSError*' type='@'/>
+<arg declared_type='MCOIndexSet*' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='MCOIMAPSession'>
+<method selector='OAuth2Token'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='allowsFolderConcurrentAccessEnabled'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='appendMessageOperationWithFolder:messageData:flags:'>
+<arg declared_type='NSString*' index='0' name='folder' type='@'/>
+<arg declared_type='NSData*' index='1' name='messageData' type='@'/>
+<arg declared_type='MCOMessageFlag' index='2' name='flags' type='i'/>
+<retval declared_type='MCOIMAPAppendMessageOperation*' type='@'/>
+</method>
+<method selector='authType'>
+<retval declared_type='MCOAuthType' type='i'/>
+</method>
+<method selector='capabilityOperation'>
+<retval declared_type='MCOIMAPCapabilityOperation*' type='@'/>
+</method>
+<method selector='checkAccountOperation'>
+<retval declared_type='MCOIMAPOperation*' type='@'/>
+</method>
+<method selector='clientIdentity'>
+<retval declared_type='MCOIMAPIdentity*' type='@'/>
+</method>
+<method selector='connectOperation'>
+<retval declared_type='MCOIMAPOperation*' type='@'/>
+</method>
+<method selector='connectionLogger'>
+<retval declared_type='MCOConnectionLogger' function_pointer='true' type='@?'>
+<arg declared_type='void*' type='^v'/>
+<arg declared_type='MCOConnectionLogType' type='i'/>
+<arg declared_type='NSData*' type='@'/>
+<retval declared_type='void' type='v'/>
+</retval>
+</method>
+<method selector='connectionType'>
+<retval declared_type='MCOConnectionType' type='i'/>
+</method>
+<method selector='copyMessagesOperationWithFolder:uids:destFolder:'>
+<arg declared_type='NSString*' index='0' name='folder' type='@'/>
+<arg declared_type='MCOIndexSet*' index='1' name='uids' type='@'/>
+<arg declared_type='NSString*' index='2' name='destFolder' type='@'/>
+<retval declared_type='MCOIMAPCopyMessagesOperation*' type='@'/>
+</method>
+<method selector='createFolderOperation:'>
+<arg declared_type='NSString*' index='0' name='folder' type='@'/>
+<retval declared_type='MCOIMAPOperation*' type='@'/>
+</method>
+<method selector='defaultNamespace'>
+<retval declared_type='MCOIMAPNamespace*' type='@'/>
+</method>
+<method selector='deleteFolderOperation:'>
+<arg declared_type='NSString*' index='0' name='folder' type='@'/>
+<retval declared_type='MCOIMAPOperation*' type='@'/>
+</method>
+<method selector='disconnectOperation'>
+<retval declared_type='MCOIMAPOperation*' type='@'/>
+</method>
+<method selector='expungeOperation:'>
+<arg declared_type='NSString*' index='0' name='folder' type='@'/>
+<retval declared_type='MCOIMAPOperation*' type='@'/>
+</method>
+<method selector='fetchAllFoldersOperation'>
+<retval declared_type='MCOIMAPFetchFoldersOperation*' type='@'/>
+</method>
+<method selector='fetchMessageAttachmentByUIDOperationWithFolder:uid:partID:encoding:'>
+<arg declared_type='NSString*' index='0' name='folder' type='@'/>
+<arg declared_type='uint32_t' index='1' name='uid' type='I'/>
+<arg declared_type='NSString*' index='2' name='partID' type='@'/>
+<arg declared_type='MCOEncoding' index='3' name='encoding' type='i'/>
+<retval declared_type='MCOIMAPFetchContentOperation*' type='@'/>
+</method>
+<method selector='fetchMessageAttachmentByUIDOperationWithFolder:uid:partID:encoding:urgent:'>
+<arg declared_type='NSString*' index='0' name='folder' type='@'/>
+<arg declared_type='uint32_t' index='1' name='uid' type='I'/>
+<arg declared_type='NSString*' index='2' name='partID' type='@'/>
+<arg declared_type='MCOEncoding' index='3' name='encoding' type='i'/>
+<arg declared_type='BOOL' index='4' name='urgent' type='B'/>
+<retval declared_type='MCOIMAPFetchContentOperation*' type='@'/>
+</method>
+<method selector='fetchMessageByUIDOperationWithFolder:uid:'>
+<arg declared_type='NSString*' index='0' name='folder' type='@'/>
+<arg declared_type='uint32_t' index='1' name='uid' type='I'/>
+<retval declared_type='MCOIMAPFetchContentOperation*' type='@'/>
+</method>
+<method selector='fetchMessageByUIDOperationWithFolder:uid:urgent:'>
+<arg declared_type='NSString*' index='0' name='folder' type='@'/>
+<arg declared_type='uint32_t' index='1' name='uid' type='I'/>
+<arg declared_type='BOOL' index='2' name='urgent' type='B'/>
+<retval declared_type='MCOIMAPFetchContentOperation*' type='@'/>
+</method>
+<method selector='fetchMessagesByNumberOperationWithFolder:requestKind:numbers:'>
+<arg declared_type='NSString*' index='0' name='folder' type='@'/>
+<arg declared_type='MCOIMAPMessagesRequestKind' index='1' name='requestKind' type='i'/>
+<arg declared_type='MCOIndexSet*' index='2' name='numbers' type='@'/>
+<retval declared_type='MCOIMAPFetchMessagesOperation*' type='@'/>
+</method>
+<method selector='fetchMessagesByUIDOperationWithFolder:requestKind:uids:'>
+<arg declared_type='NSString*' index='0' name='folder' type='@'/>
+<arg declared_type='MCOIMAPMessagesRequestKind' index='1' name='requestKind' type='i'/>
+<arg declared_type='MCOIndexSet*' index='2' name='uids' type='@'/>
+<retval declared_type='MCOIMAPFetchMessagesOperation*' type='@'/>
+</method>
+<method selector='fetchNamespaceOperation'>
+<retval declared_type='MCOIMAPFetchNamespaceOperation*' type='@'/>
+</method>
+<method selector='fetchSubscribedFoldersOperation'>
+<retval declared_type='MCOIMAPFetchFoldersOperation*' type='@'/>
+</method>
+<method selector='folderInfoOperation:'>
+<arg declared_type='NSString*' index='0' name='folder' type='@'/>
+<retval declared_type='MCOIMAPFolderInfoOperation*' type='@'/>
+</method>
+<method selector='folderStatusOperation:'>
+<arg declared_type='NSString*' index='0' name='folder' type='@'/>
+<retval declared_type='MCOIMAPFolderStatusOperation*' type='@'/>
+</method>
+<method selector='hostname'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='htmlBodyRenderingOperationWithMessage:folder:'>
+<arg declared_type='MCOIMAPMessage*' index='0' name='message' type='@'/>
+<arg declared_type='NSString*' index='1' name='folder' type='@'/>
+<retval declared_type='MCOIMAPMessageRenderingOperation*' type='@'/>
+</method>
+<method selector='htmlRenderingOperationWithMessage:folder:'>
+<arg declared_type='MCOIMAPMessage*' index='0' name='message' type='@'/>
+<arg declared_type='NSString*' index='1' name='folder' type='@'/>
+<retval declared_type='MCOIMAPMessageRenderingOperation*' type='@'/>
+</method>
+<method selector='identityOperationWithClientIdentity:'>
+<arg declared_type='MCOIMAPIdentity*' index='0' name='identity' type='@'/>
+<retval declared_type='MCOIMAPIdentityOperation*' type='@'/>
+</method>
+<method selector='idleOperationWithFolder:lastKnownUID:'>
+<arg declared_type='NSString*' index='0' name='folder' type='@'/>
+<arg declared_type='uint32_t' index='1' name='lastKnownUID' type='I'/>
+<retval declared_type='MCOIMAPIdleOperation*' type='@'/>
+</method>
+<method selector='isCheckCertificateEnabled'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='isOperationQueueRunning'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='isVoIPEnabled'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='maximumConnections'>
+<retval declared_type='unsigned int' type='I'/>
+</method>
+<method selector='noopOperation'>
+<retval declared_type='MCOIMAPOperation*' type='@'/>
+</method>
+<method selector='operationQueueRunningChangeBlock'>
+<retval declared_type='MCOOperationQueueRunningChangeBlock' function_pointer='true' type='@?'>
+<retval declared_type='void' type='v'/>
+</retval>
+</method>
+<method selector='password'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='plainTextBodyRenderingOperationWithMessage:folder:'>
+<arg declared_type='MCOIMAPMessage*' index='0' name='message' type='@'/>
+<arg declared_type='NSString*' index='1' name='folder' type='@'/>
+<retval declared_type='MCOIMAPMessageRenderingOperation*' type='@'/>
+</method>
+<method selector='plainTextBodyRenderingOperationWithMessage:folder:stripWhitespace:'>
+<arg declared_type='MCOIMAPMessage*' index='0' name='message' type='@'/>
+<arg declared_type='NSString*' index='1' name='folder' type='@'/>
+<arg declared_type='BOOL' index='2' name='stripWhitespace' type='B'/>
+<retval declared_type='MCOIMAPMessageRenderingOperation*' type='@'/>
+</method>
+<method selector='plainTextRenderingOperationWithMessage:folder:'>
+<arg declared_type='MCOIMAPMessage*' index='0' name='message' type='@'/>
+<arg declared_type='NSString*' index='1' name='folder' type='@'/>
+<retval declared_type='MCOIMAPMessageRenderingOperation*' type='@'/>
+</method>
+<method selector='port'>
+<retval declared_type='unsigned int' type='I'/>
+</method>
+<method selector='quotaOperation'>
+<retval declared_type='MCOIMAPQuotaOperation*' type='@'/>
+</method>
+<method selector='renameFolderOperation:otherName:'>
+<arg declared_type='NSString*' index='0' name='folder' type='@'/>
+<arg declared_type='NSString*' index='1' name='otherName' type='@'/>
+<retval declared_type='MCOIMAPOperation*' type='@'/>
+</method>
+<method selector='searchExpressionOperationWithFolder:expression:'>
+<arg declared_type='NSString*' index='0' name='folder' type='@'/>
+<arg declared_type='MCOIMAPSearchExpression*' index='1' name='expression' type='@'/>
+<retval declared_type='MCOIMAPSearchOperation*' type='@'/>
+</method>
+<method selector='searchOperationWithFolder:kind:searchString:'>
+<arg declared_type='NSString*' index='0' name='folder' type='@'/>
+<arg declared_type='MCOIMAPSearchKind' index='1' name='kind' type='i'/>
+<arg declared_type='NSString*' index='2' name='searchString' type='@'/>
+<retval declared_type='MCOIMAPSearchOperation*' type='@'/>
+</method>
+<method selector='serverIdentity'>
+<retval declared_type='MCOIMAPIdentity*' type='@'/>
+</method>
+<method selector='setAllowsFolderConcurrentAccessEnabled:'>
+<arg declared_type='BOOL' index='0' name='allowsFolderConcurrentAccessEnabled' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setAuthType:'>
+<arg declared_type='MCOAuthType' index='0' name='authType' type='i'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setCheckCertificateEnabled:'>
+<arg declared_type='BOOL' index='0' name='checkCertificateEnabled' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setClientIdentity:'>
+<arg declared_type='MCOIMAPIdentity*' index='0' name='clientIdentity' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setConnectionLogger:'>
+<arg declared_type='MCOConnectionLogger' function_pointer='true' index='0' name='connectionLogger' type='@?'>
+<arg declared_type='void*' type='^v'/>
+<arg declared_type='MCOConnectionLogType' type='i'/>
+<arg declared_type='NSData*' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setConnectionType:'>
+<arg declared_type='MCOConnectionType' index='0' name='connectionType' type='i'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setDefaultNamespace:'>
+<arg declared_type='MCOIMAPNamespace*' index='0' name='defaultNamespace' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setHostname:'>
+<arg declared_type='NSString*' index='0' name='hostname' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setMaximumConnections:'>
+<arg declared_type='unsigned int' index='0' name='maximumConnections' type='I'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setOAuth2Token:'>
+<arg declared_type='NSString*' index='0' name='OAuth2Token' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setOperationQueueRunningChangeBlock:'>
+<arg declared_type='MCOOperationQueueRunningChangeBlock' function_pointer='true' index='0' name='operationQueueRunningChangeBlock' type='@?'>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setPassword:'>
+<arg declared_type='NSString*' index='0' name='password' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setPort:'>
+<arg declared_type='unsigned int' index='0' name='port' type='I'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setServerIdentity:'>
+<arg declared_type='MCOIMAPIdentity*' index='0' name='serverIdentity' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setTimeout:'>
+<arg declared_type='NSTimeInterval' index='0' name='timeout' type='d'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setUsername:'>
+<arg declared_type='NSString*' index='0' name='username' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setVoIPEnabled:'>
+<arg declared_type='BOOL' index='0' name='voIPEnabled' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='storeFlagsOperationWithFolder:uids:kind:flags:'>
+<arg declared_type='NSString*' index='0' name='folder' type='@'/>
+<arg declared_type='MCOIndexSet*' index='1' name='uids' type='@'/>
+<arg declared_type='MCOIMAPStoreFlagsRequestKind' index='2' name='kind' type='i'/>
+<arg declared_type='MCOMessageFlag' index='3' name='flags' type='i'/>
+<retval declared_type='MCOIMAPOperation*' type='@'/>
+</method>
+<method selector='storeLabelsOperationWithFolder:uids:kind:labels:'>
+<arg declared_type='NSString*' index='0' name='folder' type='@'/>
+<arg declared_type='MCOIndexSet*' index='1' name='uids' type='@'/>
+<arg declared_type='MCOIMAPStoreFlagsRequestKind' index='2' name='kind' type='i'/>
+<arg declared_type='NSArray*' index='3' name='labels' type='@'/>
+<retval declared_type='MCOIMAPOperation*' type='@'/>
+</method>
+<method selector='subscribeFolderOperation:'>
+<arg declared_type='NSString*' index='0' name='folder' type='@'/>
+<retval declared_type='MCOIMAPOperation*' type='@'/>
+</method>
+<method selector='syncMessagesByUIDWithFolder:requestKind:uids:modSeq:'>
+<arg declared_type='NSString*' index='0' name='folder' type='@'/>
+<arg declared_type='MCOIMAPMessagesRequestKind' index='1' name='requestKind' type='i'/>
+<arg declared_type='MCOIndexSet*' index='2' name='uids' type='@'/>
+<arg declared_type='uint64_t' index='3' name='modSeq' type='Q'/>
+<retval declared_type='MCOIMAPFetchMessagesOperation*' type='@'/>
+</method>
+<method selector='timeout'>
+<retval declared_type='NSTimeInterval' type='d'/>
+</method>
+<method selector='unsubscribeFolderOperation:'>
+<arg declared_type='NSString*' index='0' name='folder' type='@'/>
+<retval declared_type='MCOIMAPOperation*' type='@'/>
+</method>
+<method selector='username'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+</class>
+<class name='MCOIndexSet'>
+<method selector='addIndex:'>
+<arg declared_type='uint64_t' index='0' name='idx' type='Q'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='addRange:'>
+<arg declared_type='id' index='0' name='range' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='allRanges'>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='containsIndex:'>
+<arg declared_type='uint64_t' index='0' name='idx' type='Q'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='count'>
+<retval declared_type='unsigned int' type='I'/>
+</method>
+<method selector='enumerateIndexes:'>
+<arg declared_type='void (^)(uint64_t)' function_pointer='true' index='0' name='block' type='@?'>
+<arg declared_type='uint64_t' type='Q'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='void' type='v'/>
+</method>
+<method class_method='true' selector='indexSet'>
+<retval declared_type='MCOIndexSet*' type='@'/>
+</method>
+<method class_method='true' selector='indexSetWithIndex:'>
+<arg declared_type='uint64_t' index='0' name='idx' type='Q'/>
+<retval declared_type='MCOIndexSet*' type='@'/>
+</method>
+<method class_method='true' selector='indexSetWithRange:'>
+<arg declared_type='MCORange' index='0' name='range' type='{_MCORange=QQ}'/>
+<retval declared_type='MCOIndexSet*' type='@'/>
+</method>
+<method selector='intersectsRange:'>
+<arg declared_type='id' index='0' name='range' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='nsIndexSet'>
+<retval declared_type='NSIndexSet*' type='@'/>
+</method>
+<method selector='rangesCount'>
+<retval declared_type='unsigned int' type='I'/>
+</method>
+<method selector='removeIndex:'>
+<arg declared_type='uint64_t' index='0' name='idx' type='Q'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='removeRange:'>
+<arg declared_type='id' index='0' name='range' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='MCOMailProvider'>
+<method selector='allMailFolderPath'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='draftsFolderPath'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='identifier'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='imapServices'>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method selector='importantFolderPath'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='initWithInfo:'>
+<arg declared_type='NSDictionary*' index='0' name='info' type='@'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='matchEmail:'>
+<arg declared_type='NSString*' index='0' name='email' type='@'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='matchMX:'>
+<arg declared_type='NSString*' index='0' name='hostname' type='@'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='popServices'>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method selector='sentMailFolderPath'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='setIdentifier:'>
+<arg declared_type='NSString*' index='0' name='identifier' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='smtpServices'>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method selector='spamFolderPath'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='starredFolderPath'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='trashFolderPath'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+</class>
+<class name='MCOMailProvidersManager'>
+<method selector='providerForEmail:'>
+<arg declared_type='NSString*' index='0' name='email' type='@'/>
+<retval declared_type='MCOMailProvider*' type='@'/>
+</method>
+<method selector='providerForIdentifier:'>
+<arg declared_type='NSString*' index='0' name='identifier' type='@'/>
+<retval declared_type='MCOMailProvider*' type='@'/>
+</method>
+<method selector='providerForMX:'>
+<arg declared_type='NSString*' index='0' name='hostname' type='@'/>
+<retval declared_type='MCOMailProvider*' type='@'/>
+</method>
+<method selector='registerProvidersWithFilename:'>
+<arg declared_type='NSString*' index='0' name='filename' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method class_method='true' selector='sharedManager'>
+<retval declared_type='MCOMailProvidersManager*' type='@'/>
+</method>
+</class>
+<class name='MCOMessageBuilder'>
+<method selector='addAttachment:'>
+<arg declared_type='MCOAttachment*' index='0' name='attachment' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='addRelatedAttachment:'>
+<arg declared_type='MCOAttachment*' index='0' name='attachment' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='attachments'>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method selector='boundaryPrefix'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='data'>
+<retval declared_type='NSData*' type='@'/>
+</method>
+<method selector='htmlBody'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='htmlBodyRendering'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='htmlRenderingWithDelegate:'>
+<arg declared_type='id' index='0' name='delegate' type='@'/>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='plainTextBodyRendering'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='plainTextBodyRenderingAndStripWhitespace:'>
+<arg declared_type='BOOL' index='0' name='stripWhitespace' type='B'/>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='plainTextRendering'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='relatedAttachments'>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method selector='setAttachments:'>
+<arg declared_type='NSArray*' index='0' name='attachments' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setBoundaryPrefix:'>
+<arg declared_type='NSString*' index='0' name='boundaryPrefix' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setHTMLBody:'>
+<arg declared_type='NSString*' index='0' name='htmlBody' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setRelatedAttachments:'>
+<arg declared_type='NSArray*' index='0' name='relatedAttachments' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setTextBody:'>
+<arg declared_type='NSString*' index='0' name='textBody' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='textBody'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+</class>
+<class name='MCOMessageHeader'>
+<method selector='addHeaderValue:forName:'>
+<arg declared_type='NSString*' index='0' name='value' type='@'/>
+<arg declared_type='NSString*' index='1' name='name' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='allHeadersNames'>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method selector='bcc'>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method selector='cc'>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method selector='date'>
+<retval declared_type='NSDate*' type='@'/>
+</method>
+<method selector='extractedSubject'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='forwardHeader'>
+<retval declared_type='MCOMessageHeader*' type='@'/>
+</method>
+<method selector='from'>
+<retval declared_type='MCOAddress*' type='@'/>
+</method>
+<method selector='headerValueForName:'>
+<arg declared_type='NSString*' index='0' name='name' type='@'/>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='importHeadersData:'>
+<arg declared_type='NSData*' index='0' name='data' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='inReplyTo'>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method selector='messageID'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='partialExtractedSubject'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='receivedDate'>
+<retval declared_type='NSDate*' type='@'/>
+</method>
+<method selector='references'>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method selector='removeHeaderForName:'>
+<arg declared_type='NSString*' index='0' name='name' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='replyAllHeaderWithExcludedRecipients:'>
+<arg declared_type='NSArray*' index='0' name='excludedRecipients' type='@'/>
+<retval declared_type='MCOMessageHeader*' type='@'/>
+</method>
+<method selector='replyHeaderWithExcludedRecipients:'>
+<arg declared_type='NSArray*' index='0' name='excludedRecipients' type='@'/>
+<retval declared_type='MCOMessageHeader*' type='@'/>
+</method>
+<method selector='replyTo'>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method selector='sender'>
+<retval declared_type='MCOAddress*' type='@'/>
+</method>
+<method selector='setBcc:'>
+<arg declared_type='NSArray*' index='0' name='bcc' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setCc:'>
+<arg declared_type='NSArray*' index='0' name='cc' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setDate:'>
+<arg declared_type='NSDate*' index='0' name='date' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setFrom:'>
+<arg declared_type='MCOAddress*' index='0' name='from' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setInReplyTo:'>
+<arg declared_type='NSArray*' index='0' name='inReplyTo' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setMessageID:'>
+<arg declared_type='NSString*' index='0' name='messageID' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setReceivedDate:'>
+<arg declared_type='NSDate*' index='0' name='receivedDate' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setReferences:'>
+<arg declared_type='NSArray*' index='0' name='references' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setReplyTo:'>
+<arg declared_type='NSArray*' index='0' name='replyTo' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setSender:'>
+<arg declared_type='MCOAddress*' index='0' name='sender' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setSubject:'>
+<arg declared_type='NSString*' index='0' name='subject' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setTo:'>
+<arg declared_type='NSArray*' index='0' name='to' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setUserAgent:'>
+<arg declared_type='NSString*' index='0' name='userAgent' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='subject'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='to'>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method selector='userAgent'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+</class>
+<class name='MCOMessageParser'>
+<method selector='data'>
+<retval declared_type='NSData*' type='@'/>
+</method>
+<method selector='dealloc'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='htmlBodyRendering'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='htmlRenderingWithDelegate:'>
+<arg declared_type='id' index='0' name='delegate' type='@'/>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='initWithData:'>
+<arg declared_type='NSData*' index='0' name='data' type='@'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='mainPart'>
+<retval declared_type='MCOAbstractPart*' type='@'/>
+</method>
+<method class_method='true' selector='messageParserWithData:'>
+<arg declared_type='NSData*' index='0' name='data' type='@'/>
+<retval declared_type='MCOMessageParser*' type='@'/>
+</method>
+<method selector='plainTextBodyRendering'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='plainTextBodyRenderingAndStripWhitespace:'>
+<arg declared_type='BOOL' index='0' name='stripWhitespace' type='B'/>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='plainTextRendering'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+</class>
+<class name='MCONetService'>
+<method selector='connectionType'>
+<retval declared_type='MCOConnectionType' type='i'/>
+</method>
+<method selector='hostname'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='hostnameWithEmail:'>
+<arg declared_type='NSString*' index='0' name='email' type='@'/>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='info'>
+<retval declared_type='NSDictionary*' type='@'/>
+</method>
+<method selector='initWithInfo:'>
+<arg declared_type='NSDictionary*' index='0' name='info' type='@'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='port'>
+<retval declared_type='unsigned int' type='I'/>
+</method>
+<method class_method='true' selector='serviceWithInfo:'>
+<arg declared_type='NSDictionary*' index='0' name='info' type='@'/>
+<retval declared_type='MCONetService*' type='@'/>
+</method>
+<method selector='setConnectionType:'>
+<arg declared_type='MCOConnectionType' index='0' name='connectionType' type='i'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setHostname:'>
+<arg declared_type='NSString*' index='0' name='hostname' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setPort:'>
+<arg declared_type='unsigned int' index='0' name='port' type='I'/>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='MCOOperation'>
+<method selector='callbackDispatchQueue'>
+<retval declared_type='dispatch_queue_t' type='@'/>
+</method>
+<method selector='cancel'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='isCancelled'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='operationCompleted'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setCallbackDispatchQueue:'>
+<arg declared_type='dispatch_queue_t' index='0' name='callbackDispatchQueue' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='MCOPOPFetchHeaderOperation'>
+<method selector='start:'>
+<arg declared_type='void (^)(NSError *, MCOMessageHeader *)' function_pointer='true' index='0' name='completionBlock' type='@?'>
+<arg declared_type='NSError*' type='@'/>
+<arg declared_type='MCOMessageHeader*' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='MCOPOPFetchMessageOperation'>
+<method selector='progress'>
+<retval declared_type='MCOPOPOperationProgressBlock' function_pointer='true' type='@?'>
+<arg declared_type='unsigned int' type='I'/>
+<arg declared_type='unsigned int' type='I'/>
+<retval declared_type='void' type='v'/>
+</retval>
+</method>
+<method selector='setProgress:'>
+<arg declared_type='MCOPOPOperationProgressBlock' function_pointer='true' index='0' name='progress' type='@?'>
+<arg declared_type='unsigned int' type='I'/>
+<arg declared_type='unsigned int' type='I'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='start:'>
+<arg declared_type='void (^)(NSError *, NSData *)' function_pointer='true' index='0' name='completionBlock' type='@?'>
+<arg declared_type='NSError*' type='@'/>
+<arg declared_type='NSData*' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='MCOPOPFetchMessagesOperation'>
+<method selector='start:'>
+<arg declared_type='void (^)(NSError *, NSArray *)' function_pointer='true' index='0' name='completionBlock' type='@?'>
+<arg declared_type='NSError*' type='@'/>
+<arg declared_type='NSArray*' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='MCOPOPMessageInfo'>
+<method selector='index'>
+<retval declared_type='unsigned int' type='I'/>
+</method>
+<method selector='setIndex:'>
+<arg declared_type='unsigned int' index='0' name='index' type='I'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setSize:'>
+<arg declared_type='unsigned int' index='0' name='size' type='I'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setUid:'>
+<arg declared_type='NSString*' index='0' name='uid' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='size'>
+<retval declared_type='unsigned int' type='I'/>
+</method>
+<method selector='uid'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+</class>
+<class name='MCOPOPNoopOperation'>
+<method selector='start:'>
+<arg declared_type='void (^)(NSError *)' function_pointer='true' index='0' name='completionBlock' type='@?'>
+<arg declared_type='NSError*' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='MCOPOPOperation'>
+<method selector='start:'>
+<arg declared_type='void (^)(NSError *)' function_pointer='true' index='0' name='completionBlock' type='@?'>
+<arg declared_type='NSError*' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='MCOPOPSession'>
+<method selector='authType'>
+<retval declared_type='MCOAuthType' type='i'/>
+</method>
+<method selector='checkAccountOperation'>
+<retval declared_type='MCOPOPOperation*' type='@'/>
+</method>
+<method selector='connectionLogger'>
+<retval declared_type='MCOConnectionLogger' function_pointer='true' type='@?'>
+<arg declared_type='void*' type='^v'/>
+<arg declared_type='MCOConnectionLogType' type='i'/>
+<arg declared_type='NSData*' type='@'/>
+<retval declared_type='void' type='v'/>
+</retval>
+</method>
+<method selector='connectionType'>
+<retval declared_type='MCOConnectionType' type='i'/>
+</method>
+<method selector='deleteMessagesOperationWithIndexes:'>
+<arg declared_type='MCOIndexSet*' index='0' name='indexes' type='@'/>
+<retval declared_type='MCOPOPOperation*' type='@'/>
+</method>
+<method selector='disconnectOperation'>
+<retval declared_type='MCOPOPOperation*' type='@'/>
+</method>
+<method selector='fetchHeaderOperationWithIndex:'>
+<arg declared_type='unsigned int' index='0' name='index' type='I'/>
+<retval declared_type='MCOPOPFetchHeaderOperation*' type='@'/>
+</method>
+<method selector='fetchMessageOperationWithIndex:'>
+<arg declared_type='unsigned int' index='0' name='index' type='I'/>
+<retval declared_type='MCOPOPFetchMessageOperation*' type='@'/>
+</method>
+<method selector='fetchMessagesOperation'>
+<retval declared_type='MCOPOPFetchMessagesOperation*' type='@'/>
+</method>
+<method selector='hostname'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='isCheckCertificateEnabled'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='noopOperation'>
+<retval declared_type='MCOPOPOperation*' type='@'/>
+</method>
+<method selector='password'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='port'>
+<retval declared_type='unsigned int' type='I'/>
+</method>
+<method selector='setAuthType:'>
+<arg declared_type='MCOAuthType' index='0' name='authType' type='i'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setCheckCertificateEnabled:'>
+<arg declared_type='BOOL' index='0' name='checkCertificateEnabled' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setConnectionLogger:'>
+<arg declared_type='MCOConnectionLogger' function_pointer='true' index='0' name='connectionLogger' type='@?'>
+<arg declared_type='void*' type='^v'/>
+<arg declared_type='MCOConnectionLogType' type='i'/>
+<arg declared_type='NSData*' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setConnectionType:'>
+<arg declared_type='MCOConnectionType' index='0' name='connectionType' type='i'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setHostname:'>
+<arg declared_type='NSString*' index='0' name='hostname' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setPassword:'>
+<arg declared_type='NSString*' index='0' name='password' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setPort:'>
+<arg declared_type='unsigned int' index='0' name='port' type='I'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setTimeout:'>
+<arg declared_type='NSTimeInterval' index='0' name='timeout' type='d'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setUsername:'>
+<arg declared_type='NSString*' index='0' name='username' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='timeout'>
+<retval declared_type='NSTimeInterval' type='d'/>
+</method>
+<method selector='username'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+</class>
+<class name='MCOSMTPOperation'>
+<method selector='start:'>
+<arg declared_type='void (^)(NSError *)' function_pointer='true' index='0' name='completionBlock' type='@?'>
+<arg declared_type='NSError*' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='MCOSMTPSendOperation'>
+<method selector='progress'>
+<retval declared_type='MCOSMTPOperationProgressBlock' function_pointer='true' type='@?'>
+<arg declared_type='unsigned int' type='I'/>
+<arg declared_type='unsigned int' type='I'/>
+<retval declared_type='void' type='v'/>
+</retval>
+</method>
+<method selector='setProgress:'>
+<arg declared_type='MCOSMTPOperationProgressBlock' function_pointer='true' index='0' name='progress' type='@?'>
+<arg declared_type='unsigned int' type='I'/>
+<arg declared_type='unsigned int' type='I'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='start:'>
+<arg declared_type='void (^)(NSError *)' function_pointer='true' index='0' name='completionBlock' type='@?'>
+<arg declared_type='NSError*' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='MCOSMTPSession'>
+<method selector='OAuth2Token'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='authType'>
+<retval declared_type='MCOAuthType' type='i'/>
+</method>
+<method selector='checkAccountOperationWithFrom:'>
+<arg declared_type='MCOAddress*' index='0' name='from' type='@'/>
+<retval declared_type='MCOSMTPOperation*' type='@'/>
+</method>
+<method selector='connectionLogger'>
+<retval declared_type='MCOConnectionLogger' function_pointer='true' type='@?'>
+<arg declared_type='void*' type='^v'/>
+<arg declared_type='MCOConnectionLogType' type='i'/>
+<arg declared_type='NSData*' type='@'/>
+<retval declared_type='void' type='v'/>
+</retval>
+</method>
+<method selector='connectionType'>
+<retval declared_type='MCOConnectionType' type='i'/>
+</method>
+<method selector='hostname'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='isCheckCertificateEnabled'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='isUseHeloIPEnabled'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='noopOperation'>
+<retval declared_type='MCOSMTPOperation*' type='@'/>
+</method>
+<method selector='password'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='port'>
+<retval declared_type='unsigned int' type='I'/>
+</method>
+<method selector='sendOperationWithData:'>
+<arg declared_type='NSData*' index='0' name='messageData' type='@'/>
+<retval declared_type='MCOSMTPSendOperation*' type='@'/>
+</method>
+<method selector='sendOperationWithData:from:recipients:'>
+<arg declared_type='NSData*' index='0' name='messageData' type='@'/>
+<arg declared_type='MCOAddress*' index='1' name='from' type='@'/>
+<arg declared_type='NSArray*' index='2' name='recipients' type='@'/>
+<retval declared_type='MCOSMTPSendOperation*' type='@'/>
+</method>
+<method selector='setAuthType:'>
+<arg declared_type='MCOAuthType' index='0' name='authType' type='i'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setCheckCertificateEnabled:'>
+<arg declared_type='BOOL' index='0' name='checkCertificateEnabled' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setConnectionLogger:'>
+<arg declared_type='MCOConnectionLogger' function_pointer='true' index='0' name='connectionLogger' type='@?'>
+<arg declared_type='void*' type='^v'/>
+<arg declared_type='MCOConnectionLogType' type='i'/>
+<arg declared_type='NSData*' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setConnectionType:'>
+<arg declared_type='MCOConnectionType' index='0' name='connectionType' type='i'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setHostname:'>
+<arg declared_type='NSString*' index='0' name='hostname' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setOAuth2Token:'>
+<arg declared_type='NSString*' index='0' name='OAuth2Token' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setPassword:'>
+<arg declared_type='NSString*' index='0' name='password' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setPort:'>
+<arg declared_type='unsigned int' index='0' name='port' type='I'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setTimeout:'>
+<arg declared_type='NSTimeInterval' index='0' name='timeout' type='d'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setUseHeloIPEnabled:'>
+<arg declared_type='BOOL' index='0' name='useHeloIPEnabled' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setUsername:'>
+<arg declared_type='NSString*' index='0' name='username' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='timeout'>
+<retval declared_type='NSTimeInterval' type='d'/>
+</method>
+<method selector='username'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+</class>
+<class name='NSArray'>
+<method selector='mco_RFC822StringForAddresses'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='mco_nonEncodedRFC822StringForAddresses'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+</class>
+<class name='NSIndexSet'>
+<method selector='mcoIndexSet'>
+<retval declared_type='MCOIndexSet*' type='@'/>
+</method>
+</class>
+<class name='NSObject'>
+<method selector='MCOAbstractMessage:canPreviewPart:'>
+<arg declared_type='MCOAbstractMessage*' index='0' name='msg' type='@'/>
+<arg declared_type='MCOAbstractPart*' index='1' name='part' type='@'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='MCOAbstractMessage:dataForIMAPPart:folder:'>
+<arg declared_type='MCOAbstractMessage*' index='0' name='msg' type='@'/>
+<arg declared_type='MCOIMAPPart*' index='1' name='part' type='@'/>
+<arg declared_type='NSString*' index='2' name='folder' type='@'/>
+<retval declared_type='NSData*' type='@'/>
+</method>
+<method selector='MCOAbstractMessage:filterHTMLForMessage:'>
+<arg declared_type='MCOAbstractMessage*' index='0' name='msg' type='@'/>
+<arg declared_type='NSString*' index='1' name='html' type='@'/>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='MCOAbstractMessage:filterHTMLForPart:'>
+<arg declared_type='MCOAbstractMessage*' index='0' name='msg' type='@'/>
+<arg declared_type='NSString*' index='1' name='html' type='@'/>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='MCOAbstractMessage:prefetchAttachmentIMAPPart:folder:'>
+<arg declared_type='MCOAbstractMessage*' index='0' name='msg' type='@'/>
+<arg declared_type='MCOIMAPPart*' index='1' name='part' type='@'/>
+<arg declared_type='NSString*' index='2' name='folder' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='MCOAbstractMessage:prefetchImageIMAPPart:folder:'>
+<arg declared_type='MCOAbstractMessage*' index='0' name='msg' type='@'/>
+<arg declared_type='MCOIMAPPart*' index='1' name='part' type='@'/>
+<arg declared_type='NSString*' index='2' name='folder' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='MCOAbstractMessage:shouldShowPart:'>
+<arg declared_type='MCOAbstractMessage*' index='0' name='msg' type='@'/>
+<arg declared_type='MCOAbstractPart*' index='1' name='part' type='@'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='MCOAbstractMessage:templateForAttachment:'>
+<arg declared_type='MCOAbstractMessage*' index='0' name='msg' type='@'/>
+<arg declared_type='MCOAbstractPart*' index='1' name='part' type='@'/>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='MCOAbstractMessage:templateForEmbeddedMessage:'>
+<arg declared_type='MCOAbstractMessage*' index='0' name='msg' type='@'/>
+<arg declared_type='MCOAbstractMessagePart*' index='1' name='part' type='@'/>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='MCOAbstractMessage:templateForEmbeddedMessageHeader:'>
+<arg declared_type='MCOAbstractMessage*' index='0' name='msg' type='@'/>
+<arg declared_type='MCOMessageHeader*' index='1' name='header' type='@'/>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='MCOAbstractMessage:templateForImage:'>
+<arg declared_type='MCOAbstractMessage*' index='0' name='msg' type='@'/>
+<arg declared_type='MCOAbstractPart*' index='1' name='header' type='@'/>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='MCOAbstractMessage:templateForMainHeader:'>
+<arg declared_type='MCOAbstractMessage*' index='0' name='msg' type='@'/>
+<arg declared_type='MCOMessageHeader*' index='1' name='header' type='@'/>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='MCOAbstractMessage:templateValuesForHeader:'>
+<arg declared_type='MCOAbstractMessage*' index='0' name='msg' type='@'/>
+<arg declared_type='MCOMessageHeader*' index='1' name='header' type='@'/>
+<retval declared_type='NSDictionary*' type='@'/>
+</method>
+<method selector='MCOAbstractMessage:templateValuesForPart:'>
+<arg declared_type='MCOAbstractMessage*' index='0' name='msg' type='@'/>
+<arg declared_type='MCOAbstractPart*' index='1' name='part' type='@'/>
+<retval declared_type='NSDictionary*' type='@'/>
+</method>
+<method selector='MCOAbstractMessage_templateForAttachmentSeparator:'>
+<arg declared_type='MCOAbstractMessage*' index='0' name='msg' type='@'/>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='MCOAbstractMessage_templateForMessage:'>
+<arg declared_type='MCOAbstractMessage*' index='0' name='msg' type='@'/>
+<retval declared_type='NSString*' type='@'/>
+</method>
+</class>
+<class name='NSString'>
+<method selector='mco_cleanedHTMLString'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='mco_flattenHTML'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='mco_flattenHTMLAndShowBlockquote:'>
+<arg declared_type='BOOL' index='0' name='showBlockquote' type='B'/>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='mco_flattenHTMLAndShowBlockquote:showLink:'>
+<arg declared_type='BOOL' index='0' name='showBlockquote' type='B'/>
+<arg declared_type='BOOL' index='1' name='showLink' type='B'/>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='mco_htmlEncodedString'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+</class>
+<informal_protocol name='MCOHTMLRendererDelegate'>
+<method selector='MCOAbstractMessage:canPreviewPart:' type='B16@0:4@8@12' type64='B32@0:8@16@24'>
+<arg declared_type='MCOAbstractMessage*' index='0' name='msg' type='@'/>
+<arg declared_type='MCOAbstractPart*' index='1' name='part' type='@'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='MCOAbstractMessage:filterHTMLForMessage:' type='@16@0:4@8@12' type64='@32@0:8@16@24'>
+<arg declared_type='MCOAbstractMessage*' index='0' name='msg' type='@'/>
+<arg declared_type='NSString*' index='1' name='html' type='@'/>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='MCOAbstractMessage:filterHTMLForPart:' type='@16@0:4@8@12' type64='@32@0:8@16@24'>
+<arg declared_type='MCOAbstractMessage*' index='0' name='msg' type='@'/>
+<arg declared_type='NSString*' index='1' name='html' type='@'/>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='MCOAbstractMessage:shouldShowPart:' type='B16@0:4@8@12' type64='B32@0:8@16@24'>
+<arg declared_type='MCOAbstractMessage*' index='0' name='msg' type='@'/>
+<arg declared_type='MCOAbstractPart*' index='1' name='part' type='@'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='MCOAbstractMessage:templateForAttachment:' type='@16@0:4@8@12' type64='@32@0:8@16@24'>
+<arg declared_type='MCOAbstractMessage*' index='0' name='msg' type='@'/>
+<arg declared_type='MCOAbstractPart*' index='1' name='part' type='@'/>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='MCOAbstractMessage:templateForEmbeddedMessage:' type='@16@0:4@8@12' type64='@32@0:8@16@24'>
+<arg declared_type='MCOAbstractMessage*' index='0' name='msg' type='@'/>
+<arg declared_type='MCOAbstractMessagePart*' index='1' name='part' type='@'/>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='MCOAbstractMessage:templateForEmbeddedMessageHeader:' type='@16@0:4@8@12' type64='@32@0:8@16@24'>
+<arg declared_type='MCOAbstractMessage*' index='0' name='msg' type='@'/>
+<arg declared_type='MCOMessageHeader*' index='1' name='header' type='@'/>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='MCOAbstractMessage:templateForImage:' type='@16@0:4@8@12' type64='@32@0:8@16@24'>
+<arg declared_type='MCOAbstractMessage*' index='0' name='msg' type='@'/>
+<arg declared_type='MCOAbstractPart*' index='1' name='header' type='@'/>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='MCOAbstractMessage:templateForMainHeader:' type='@16@0:4@8@12' type64='@32@0:8@16@24'>
+<arg declared_type='MCOAbstractMessage*' index='0' name='msg' type='@'/>
+<arg declared_type='MCOMessageHeader*' index='1' name='header' type='@'/>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='MCOAbstractMessage:templateValuesForHeader:' type='@16@0:4@8@12' type64='@32@0:8@16@24'>
+<arg declared_type='MCOAbstractMessage*' index='0' name='msg' type='@'/>
+<arg declared_type='MCOMessageHeader*' index='1' name='header' type='@'/>
+<retval declared_type='NSDictionary*' type='@'/>
+</method>
+<method selector='MCOAbstractMessage:templateValuesForPart:' type='@16@0:4@8@12' type64='@32@0:8@16@24'>
+<arg declared_type='MCOAbstractMessage*' index='0' name='msg' type='@'/>
+<arg declared_type='MCOAbstractPart*' index='1' name='part' type='@'/>
+<retval declared_type='NSDictionary*' type='@'/>
+</method>
+<method selector='MCOAbstractMessage_templateForAttachmentSeparator:' type='@12@0:4@8' type64='@24@0:8@16'>
+<arg declared_type='MCOAbstractMessage*' index='0' name='msg' type='@'/>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='MCOAbstractMessage_templateForMessage:' type='@12@0:4@8' type64='@24@0:8@16'>
+<arg declared_type='MCOAbstractMessage*' index='0' name='msg' type='@'/>
+<retval declared_type='NSString*' type='@'/>
+</method>
+</informal_protocol>
+<informal_protocol name='MCOHTMLRendererIMAPDelegate'>
+<method selector='MCOAbstractMessage:dataForIMAPPart:folder:' type='@20@0:4@8@12@16' type64='@40@0:8@16@24@32'>
+<arg declared_type='MCOAbstractMessage*' index='0' name='msg' type='@'/>
+<arg declared_type='MCOIMAPPart*' index='1' name='part' type='@'/>
+<arg declared_type='NSString*' index='2' name='folder' type='@'/>
+<retval declared_type='NSData*' type='@'/>
+</method>
+<method selector='MCOAbstractMessage:prefetchAttachmentIMAPPart:folder:' type='v20@0:4@8@12@16' type64='v40@0:8@16@24@32'>
+<arg declared_type='MCOAbstractMessage*' index='0' name='msg' type='@'/>
+<arg declared_type='MCOIMAPPart*' index='1' name='part' type='@'/>
+<arg declared_type='NSString*' index='2' name='folder' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='MCOAbstractMessage:prefetchImageIMAPPart:folder:' type='v20@0:4@8@12@16' type64='v40@0:8@16@24@32'>
+<arg declared_type='MCOAbstractMessage*' index='0' name='msg' type='@'/>
+<arg declared_type='MCOIMAPPart*' index='1' name='part' type='@'/>
+<arg declared_type='NSString*' index='2' name='folder' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+</informal_protocol>
+</signatures>
