@@ -8,6 +8,9 @@ class AppDelegate
     puts "applicationDidFinishLaunching".yellow
     # buildMenu
     # buildWindow
+
+    @imap_controller = IMAPController.new
+    @imap_controller.synchronize
   end
 
   def applicationWillTerminate notification
