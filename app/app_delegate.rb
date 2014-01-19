@@ -39,7 +39,7 @@ class AppDelegate
   def build_folder_window(folder)
     folder_window_controller = FolderWindowController.new
     folder_window = folder_window_controller.window
-    folder_window.title = folder.path
+    folder_window.title = folder.local_path
     folder_window.center
     folder_window.orderFrontRegardless
 
