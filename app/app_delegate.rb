@@ -36,7 +36,7 @@ class AppDelegate
     @main_window.orderFrontRegardless
   end
 
-  def build_folder_window(folder)
+  def build_folder_window folder
     folder_window_controller = FolderWindowController.new
     folder_window = folder_window_controller.window
     folder_window.title = folder.local_path
@@ -44,5 +44,6 @@ class AppDelegate
     folder_window.orderFrontRegardless
 
     @folder_window_controllers << folder_window_controller
+    folder_window_controller
   end
 end

@@ -3,7 +3,7 @@ class MessageView < WebView
 
   def initWithFrame frame
     super.tap do
-      self.mainFrame.loadRequest(NSURLRequest.requestWithURL(NSURL.URLWithString("http://google.com")))
+      self.mainFrame.loadRequest NSURLRequest.requestWithURL(NSURL.URLWithString("http://google.com"))
       # self.frameLoadDelegate = MessageViewWebFrameLoadDelegate
       # self.policyDelegate = MessageViewWebPolicyDelegate
       # self.resourceLoadDelegate = MessageViewWebResourceLoadDelegate

@@ -1,6 +1,8 @@
 class FolderWindowController < TeacupWindowController
   stylesheet :main
 
+  attr_accessor :messages_controller
+
   def loadWindow
     self.window = NSWindow.alloc.initWithContentRect [[0, 0], [750, 750]],
       styleMask: NSTitledWindowMask | NSClosableWindowMask | NSMiniaturizableWindowMask | NSResizableWindowMask,
