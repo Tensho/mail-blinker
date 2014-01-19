@@ -17,11 +17,11 @@ class IMAPController
     @session.checkAccountOperation.
     start(-> (error) do
       if error
-        puts error.localizedDescription
+        puts error.localizedDescription.red
       else
         @session.fetchNamespaceOperation.start(-> (error, namespaces) do
           if error
-            puts error.localizedDescription
+            puts error.localizedDescription.red
           else
             @session.setDefaultNamespace(namespaces[MCOIMAPNamespacePersonal])
 
@@ -35,7 +35,7 @@ class IMAPController
                 @session.fetchMessagesByUIDOperationWithFolder(folder.path, requestKind: REQUEST_KIND, uids: UIDS).
                 start(-> (error, imap_messages, vanished_messages) do
                   if error
-                    puts error.localizedDescription
+                    puts error.localizedDescription.red
                   else
                     puts "#{folder.local_path}: #{imap_messages.count} messages"
 
@@ -48,7 +48,11 @@ class IMAPController
 
                       @session.htmlRenderingOperationWithMessage(imap_message, folder: folder.path).
                       start(-> (html, error) do
-                        App.notification_center.post :reload_notification, nil, html: html
+                        if error
+                          puts error.localizedDescription.red
+                        else
+                          App.notification_center.post :reload_notification, nil, html: html
+                        end
                       end)
 
                       # MCOIMAPMessage#htmlRenderingWithFolder
