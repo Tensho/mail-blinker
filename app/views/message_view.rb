@@ -3,18 +3,18 @@ class MessageView < WebView
 
   def initWithFrame frame
     super.tap do
-      self.mainFrame.loadRequest(NSURLRequest.requestWithURL(NSURL.URLWithString("http://habrahabr.ru")))
-      self.frameLoadDelegate = MessageViewWebFrameLoadDelegate
-      self.policyDelegate = MessageViewWebPolicyDelegate
-      self.resourceLoadDelegate = MessageViewWebResourceLoadDelegate
-      self.UIDelegate = MessageViewWebUIDelegate
+      self.mainFrame.loadRequest(NSURLRequest.requestWithURL(NSURL.URLWithString("http://google.com")))
+      # self.frameLoadDelegate = MessageViewWebFrameLoadDelegate
+      # self.policyDelegate = MessageViewWebPolicyDelegate
+      # self.resourceLoadDelegate = MessageViewWebResourceLoadDelegate
+      # self.UIDelegate = MessageViewWebUIDelegate
 
       add_observer
 
-      look_webview self
-      look_preferences self.preferences
-      look_webframe self.mainFrame
-      look_webdatasource self.mainFrame.dataSource
+      # look_webview self
+      # look_preferences self.preferences
+      # look_webframe self.mainFrame
+      # look_webdatasource self.mainFrame.dataSource
     end
   end
 
