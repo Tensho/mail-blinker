@@ -8,8 +8,4 @@ class MainWindowController < TeacupWindowController
       defer: false
   end
 
-  layout do
-    @messages_controller = MessagesController.new
-    subview @messages_controller.view, :root
-  end
 end
