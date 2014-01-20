@@ -9,7 +9,7 @@ class MessageView < WebView
       # self.resourceLoadDelegate = MessageViewWebResourceLoadDelegate
       # self.UIDelegate = MessageViewWebUIDelegate
 
-      add_observer
+      # add_observer
 
       # look_webview self
       # look_preferences self.preferences
