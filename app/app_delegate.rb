@@ -28,14 +28,6 @@ class AppDelegate
     true
   end
 
-  def build_main_window
-    @main_window_controller = MainWindowController.new
-    @main_window = @main_window_controller.window
-    @main_window.title = NSBundle.mainBundle.infoDictionary['CFBundleName']
-    @main_window.center
-    @main_window.orderFrontRegardless
-  end
-
   def build_folder_window folder
     folder_window_controller = FolderWindowController.new
     folder_window = folder_window_controller.window
