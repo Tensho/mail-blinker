@@ -32,8 +32,7 @@ class AppDelegate
     folder_window_controller = FolderWindowController.new
     folder_window = folder_window_controller.window
     folder_window.title = folder.local_path
-    folder_window.center
-    folder_window.orderFrontRegardless
+    folder_window.makeKeyAndOrderFront folder_window
 
     @folder_window_controllers << folder_window_controller
     folder_window_controller
